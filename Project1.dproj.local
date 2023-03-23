@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/06/28 13:40:50.000.317,=C:\Users\guilherme.barbudo\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/08/12 16:28:36.000.712,=C:\Users\guilherme.barbudo\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/08/12 16:49:47.000.484,C:\Users\guilherme.barbudo\Desktop\Guilherme Barbudo\Estudo\Delphi\P8 - Suporte Coletek\UnitPrincipal.dfm=C:\Users\guilherme.barbudo\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2022/08/12 16:49:47.000.484,C:\Users\guilherme.barbudo\Desktop\Guilherme Barbudo\Estudo\Delphi\P8 - Suporte Coletek\UnitPrincipal.pas=C:\Users\guilherme.barbudo\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/08/12 16:49:50.000.391,C:\Users\guilherme.barbudo\Desktop\Guilherme Barbudo\Estudo\Delphi\P8 - Suporte Coletek\Project1.dproj=C:\Users\guilherme.barbudo\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2022/08/12 16:50:03.000.745,=C:\Users\guilherme.barbudo\Desktop\Guilherme Barbudo\Estudo\Delphi\P8 - Suporte Coletek\Unit1.pas</Transaction>
+    <Transaction>2022/08/12 16:59:15.000.443,C:\Users\guilherme.barbudo\Desktop\Guilherme Barbudo\Estudo\Delphi\P8 - Suporte Coletek\UnitDM.pas=C:\Users\guilherme.barbudo\Desktop\Guilherme Barbudo\Estudo\Delphi\P8 - Suporte Coletek\Unit1.pas</Transaction>
+    <Transaction>2022/08/12 16:59:15.000.443,C:\Users\guilherme.barbudo\Desktop\Guilherme Barbudo\Estudo\Delphi\P8 - Suporte Coletek\UnitDM.dfm=C:\Users\guilherme.barbudo\Desktop\Guilherme Barbudo\Estudo\Delphi\P8 - Suporte Coletek\Unit1.dfm</Transaction>
+    <Transaction>2022/08/15 08:58:01.000.936,=C:\Users\guilherme.barbudo\Desktop\Guilherme Barbudo\Estudo\Delphi\P8 - Suporte Coletek\Unit1.pas</Transaction>
+    <Transaction>2022/08/15 09:03:50.000.811,=C:\Users\guilherme.barbudo\Desktop\Guilherme Barbudo\Estudo\Delphi\P8 - Suporte Coletek\Unit2.pas</Transaction>
+    <Transaction>2022/08/15 09:13:05.000.626,C:\Users\guilherme.barbudo\Desktop\Guilherme Barbudo\Estudo\Delphi\P8 - Suporte Coletek\Unit2.dfm=C:\Users\guilherme.barbudo\Desktop\Guilherme Barbudo\Estudo\Delphi\P8 - Suporte Coletek\UnitChamado.dfm</Transaction>
+    <Transaction>2022/08/15 09:13:05.000.626,C:\Users\guilherme.barbudo\Desktop\Guilherme Barbudo\Estudo\Delphi\P8 - Suporte Coletek\Unit2.pas=C:\Users\guilherme.barbudo\Desktop\Guilherme Barbudo\Estudo\Delphi\P8 - Suporte Coletek\UnitChamado.pas</Transaction>
+    <Transaction>2022/08/15 10:39:11.000.733,=C:\Users\guilherme.barbudo\Desktop\Guilherme Barbudo\Estudo\Delphi\P8 - Suporte Coletek\Unit2.pas</Transaction>
+    <Transaction>2022/08/15 10:49:01.000.998,C:\Users\guilherme.barbudo\Desktop\Guilherme Barbudo\Estudo\Delphi\P8 - Suporte Coletek\Unit2.dfm=C:\Users\guilherme.barbudo\Desktop\Guilherme Barbudo\Estudo\Delphi\P8 - Suporte Coletek\UnitVBase.dfm</Transaction>
+    <Transaction>2022/08/15 10:49:01.000.998,C:\Users\guilherme.barbudo\Desktop\Guilherme Barbudo\Estudo\Delphi\P8 - Suporte Coletek\Unit2.pas=C:\Users\guilherme.barbudo\Desktop\Guilherme Barbudo\Estudo\Delphi\P8 - Suporte Coletek\UnitVBase.pas</Transaction>
+    <Transaction>2022/08/15 11:03:08.000.919,=C:\Users\guilherme.barbudo\Desktop\Guilherme Barbudo\Estudo\Delphi\P8 - Suporte Coletek\Unit2.pas</Transaction>
+    <Transaction>2022/08/15 11:08:16.000.078,C:\Users\guilherme.barbudo\Desktop\Guilherme Barbudo\Estudo\Delphi\P8 - Suporte Coletek\Unit2.pas=C:\Users\guilherme.barbudo\Desktop\Guilherme Barbudo\Estudo\Delphi\P8 - Suporte Coletek\UnitEAcesso.pas</Transaction>
+    <Transaction>2022/08/15 11:08:16.000.078,C:\Users\guilherme.barbudo\Desktop\Guilherme Barbudo\Estudo\Delphi\P8 - Suporte Coletek\Unit2.dfm=C:\Users\guilherme.barbudo\Desktop\Guilherme Barbudo\Estudo\Delphi\P8 - Suporte Coletek\UnitEAcesso.dfm</Transaction>
+    <Transaction>2022/08/15 11:12:15.000.302,=C:\Users\guilherme.barbudo\Desktop\Guilherme Barbudo\Estudo\Delphi\P8 - Suporte Coletek\Unit2.pas</Transaction>
+    <Transaction>2022/08/15 11:17:48.000.809,C:\Users\guilherme.barbudo\Desktop\Guilherme Barbudo\Estudo\Delphi\P8 - Suporte Coletek\Unit2.pas=C:\Users\guilherme.barbudo\Desktop\Guilherme Barbudo\Estudo\Delphi\P8 - Suporte Coletek\UnitLogEmail.pas</Transaction>
+    <Transaction>2022/08/15 11:17:48.000.809,C:\Users\guilherme.barbudo\Desktop\Guilherme Barbudo\Estudo\Delphi\P8 - Suporte Coletek\Unit2.dfm=C:\Users\guilherme.barbudo\Desktop\Guilherme Barbudo\Estudo\Delphi\P8 - Suporte Coletek\UnitLogEmail.dfm</Transaction>
+    <Transaction>2022/08/16 08:04:48.000.044,=C:\Users\guilherme.barbudo\Desktop\Guilherme Barbudo\Estudo\Delphi\P8 - Suporte Coletek\Unit2.pas</Transaction>
+    <Transaction>2022/08/16 08:06:09.000.689,C:\Users\guilherme.barbudo\Desktop\Guilherme Barbudo\Estudo\Delphi\P8 - Suporte Coletek\Unit2.pas=C:\Users\guilherme.barbudo\Desktop\Guilherme Barbudo\Estudo\Delphi\P8 - Suporte Coletek\UnitEBase.pas</Transaction>
+    <Transaction>2022/08/16 08:06:09.000.689,C:\Users\guilherme.barbudo\Desktop\Guilherme Barbudo\Estudo\Delphi\P8 - Suporte Coletek\Unit2.dfm=C:\Users\guilherme.barbudo\Desktop\Guilherme Barbudo\Estudo\Delphi\P8 - Suporte Coletek\UnitEBase.dfm</Transaction>
+  </Transactions>
+</BorlandProject>

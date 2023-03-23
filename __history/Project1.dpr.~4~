@@ -1,0 +1,18 @@
+program Project1;
+
+uses
+  Vcl.Forms,
+  UnitPrincipal in 'UnitPrincipal.pas' {Form1},
+  UnitDM in 'UnitDM.pas' {DM: TDataModule},
+  UnitChamado in 'UnitChamado.pas' {formChamado};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TDM, DM);
+  Application.CreateForm(TformChamado, formChamado);
+  Application.Run;
+end.

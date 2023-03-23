@@ -1,0 +1,258 @@
+object formLogEmail: TformLogEmail
+  Left = 0
+  Top = 0
+  BorderIcons = [biSystemMenu]
+  Caption = 'Coletek TI | Log Email NF'
+  ClientHeight = 322
+  ClientWidth = 517
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poScreenCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  object TDEdit: TPanel
+    Left = 0
+    Top = 0
+    Width = 517
+    Height = 65
+    Align = alTop
+    Color = 16744448
+    ParentBackground = False
+    TabOrder = 0
+    object Nome: TLabel
+      Left = 16
+      Top = 25
+      Width = 14
+      Height = 14
+      Caption = 'NF'
+      Color = clWhite
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = 14
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label1: TLabel
+      Left = 178
+      Top = 25
+      Width = 14
+      Height = 14
+      Caption = 'N'#186
+      Color = clWhite
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = 14
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentColor = False
+      ParentFont = False
+    end
+    object edtNFCod: TEdit
+      Left = 36
+      Top = 23
+      Width = 136
+      Height = 21
+      TabOrder = 0
+    end
+    object bLocalizar: TButton
+      Left = 320
+      Top = 21
+      Width = 113
+      Height = 25
+      Caption = 'Localizar'
+      TabOrder = 1
+      OnClick = bLocalizarClick
+    end
+    object edtNFSerie: TEdit
+      Left = 198
+      Top = 23
+      Width = 72
+      Height = 21
+      TabOrder = 2
+    end
+  end
+  object Panel1: TPanel
+    Left = 0
+    Top = 65
+    Width = 517
+    Height = 257
+    Align = alClient
+    Color = clWhite
+    ParentBackground = False
+    TabOrder = 1
+    object Label3: TLabel
+      Left = 16
+      Top = 21
+      Width = 52
+      Height = 13
+      Caption = 'Nota Fiscal'
+      FocusControl = DBEdit1
+    end
+    object Label4: TLabel
+      Left = 132
+      Top = 21
+      Width = 24
+      Height = 13
+      Caption = 'S'#233'rie'
+      FocusControl = DBEdit2
+    end
+    object Label6: TLabel
+      Left = 201
+      Top = 21
+      Width = 63
+      Height = 13
+      Caption = 'Email Destino'
+      FocusControl = DBEdit4
+    end
+    object Label9: TLabel
+      Left = 16
+      Top = 139
+      Width = 31
+      Height = 13
+      Caption = 'Status'
+      FocusControl = DBEdit7
+    end
+    object Label10: TLabel
+      Left = 16
+      Top = 190
+      Width = 57
+      Height = 13
+      Caption = 'Lote C'#243'digo'
+      FocusControl = DBEdit8
+    end
+    object Label12: TLabel
+      Left = 201
+      Top = 77
+      Width = 57
+      Height = 13
+      Caption = 'Enviado Por'
+      FocusControl = DBEdit10
+    end
+    object Label13: TLabel
+      Left = 124
+      Top = 193
+      Width = 63
+      Height = 13
+      Caption = 'Autentica'#231#227'o'
+      FocusControl = DBEdit11
+    end
+    object Label15: TLabel
+      Left = 412
+      Top = 139
+      Width = 41
+      Height = 13
+      Caption = 'Situa'#231#227'o'
+      FocusControl = DBEdit13
+    end
+    object Label17: TLabel
+      Left = 16
+      Top = 77
+      Width = 52
+      Height = 13
+      Caption = 'Data Envio'
+      FocusControl = DBEdit15
+    end
+    object DBEdit1: TDBEdit
+      Left = 16
+      Top = 40
+      Width = 95
+      Height = 21
+      DataField = 'NFU_CODIGO'
+      DataSource = DataSource1
+      ReadOnly = True
+      TabOrder = 0
+    end
+    object DBEdit2: TDBEdit
+      Left = 132
+      Top = 40
+      Width = 55
+      Height = 21
+      DataField = 'NFU_SERIE'
+      DataSource = DataSource1
+      ReadOnly = True
+      TabOrder = 1
+    end
+    object DBEdit4: TDBEdit
+      Left = 201
+      Top = 40
+      Width = 285
+      Height = 21
+      DataField = 'NFM_DESTINATARIO'
+      DataSource = DataSource1
+      ReadOnly = True
+      TabOrder = 2
+    end
+    object DBEdit7: TDBEdit
+      Left = 16
+      Top = 158
+      Width = 374
+      Height = 21
+      DataField = 'NFM_OBSERVACAO'
+      DataSource = DataSource1
+      ReadOnly = True
+      TabOrder = 3
+    end
+    object DBEdit8: TDBEdit
+      Left = 16
+      Top = 209
+      Width = 86
+      Height = 21
+      DataField = 'LOT_CODIGO'
+      DataSource = DataSource1
+      ReadOnly = True
+      TabOrder = 4
+    end
+    object DBEdit10: TDBEdit
+      Left = 201
+      Top = 96
+      Width = 285
+      Height = 21
+      DataField = 'NFM_INCLUIPOR'
+      DataSource = DataSource1
+      ReadOnly = True
+      TabOrder = 5
+    end
+    object DBEdit11: TDBEdit
+      Left = 124
+      Top = 212
+      Width = 367
+      Height = 21
+      DataField = 'NFM_AUTENTICACAO'
+      DataSource = DataSource1
+      ReadOnly = True
+      TabOrder = 6
+    end
+    object DBEdit13: TDBEdit
+      Left = 412
+      Top = 158
+      Width = 79
+      Height = 21
+      DataField = 'NFM_SITUACAO'
+      DataSource = DataSource1
+      ReadOnly = True
+      TabOrder = 7
+    end
+    object DBEdit15: TDBEdit
+      Left = 16
+      Top = 96
+      Width = 171
+      Height = 21
+      DataField = 'NFM_INCLUIPOR'
+      DataSource = DataSource1
+      ReadOnly = True
+      TabOrder = 8
+    end
+  end
+  object DataSource1: TDataSource
+    DataSet = DM.sqlLogEmail
+    Left = 464
+    Top = 16
+  end
+end

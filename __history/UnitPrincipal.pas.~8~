@@ -1,0 +1,64 @@
+unit UnitPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Buttons, Vcl.Mask,
+  Vcl.DBCtrls, Vcl.ExtCtrls;
+
+type
+  TForm1 = class(TForm)
+    btBaseUsuario: TBitBtn;
+    btVerifBase: TBitBtn;
+    btEspelhoBase: TBitBtn;
+    btLogEmail: TBitBtn;
+    btEspelhoAcesso: TBitBtn;
+    btSair: TBitBtn;
+    TDEdit: TPanel;
+    procedure btBaseUsuarioClick(Sender: TObject);
+    procedure btSairClick(Sender: TObject);
+    procedure btVerifBaseClick(Sender: TObject);
+    procedure btEspelhoBaseClick(Sender: TObject);
+    procedure btLogEmailClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+uses UnitChamado, UnitVBase, UnitEAcesso, UnitLogEmail;
+
+procedure TForm1.btBaseUsuarioClick(Sender: TObject);
+begin
+  formChamado.ShowModal;
+end;
+
+procedure TForm1.btEspelhoBaseClick(Sender: TObject);
+begin
+   formEAcesso.ShowModal;
+end;
+
+procedure TForm1.btLogEmailClick(Sender: TObject);
+begin
+   formLogEmail.ShowModal;
+end;
+
+procedure TForm1.btSairClick(Sender: TObject);
+begin
+   Application.Terminate;
+end;
+
+procedure TForm1.btVerifBaseClick(Sender: TObject);
+begin
+   formVBase.ShowModal;
+end;
+
+end.

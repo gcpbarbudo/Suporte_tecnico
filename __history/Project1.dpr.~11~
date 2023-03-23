@@ -1,0 +1,26 @@
+program Project1;
+
+uses
+  Vcl.Forms,
+  UnitPrincipal in 'UnitPrincipal.pas' {Form1},
+  UnitDM in 'UnitDM.pas' {DM: TDataModule},
+  UnitChamado in 'UnitChamado.pas' {formChamado},
+  UnitVBase in 'UnitVBase.pas' {formVBase},
+  UnitEAcesso in 'UnitEAcesso.pas' {formEAcesso},
+  UnitLogEmail in 'UnitLogEmail.pas' {formLogEmail},
+  UnitEBase in 'UnitEBase.pas' {Form2};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TDM, DM);
+  Application.CreateForm(TformChamado, formChamado);
+  Application.CreateForm(TformVBase, formVBase);
+  Application.CreateForm(TformEAcesso, formEAcesso);
+  Application.CreateForm(TformLogEmail, formLogEmail);
+  Application.CreateForm(TForm2, Form2);
+  Application.Run;
+end.

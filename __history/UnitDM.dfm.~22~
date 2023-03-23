@@ -1,0 +1,547 @@
+object DM: TDM
+  OldCreateOrder = False
+  Height = 272
+  Width = 393
+  object Conexao: TFDConnection
+    Params.Strings = (
+      'Database=ORAFAB'
+      'User_Name=ORACLC'
+      'Password=mJ2vhXdhj6kr4Gf'
+      'DriverID=ora')
+    Connected = True
+    LoginPrompt = False
+    Left = 32
+    Top = 16
+  end
+  object dsChamados: TDataSource
+    DataSet = sqlChamados
+    Left = 32
+    Top = 80
+  end
+  object sqlVBase: TFDQuery
+    Active = True
+    Connection = Conexao
+    SQL.Strings = (
+      
+        '-- CONSULTA: PROCURAR SE USU'#193'RIO E VENDEDOR NA BASE PARA INATIVA' +
+        #199#195'O'
+      '-- DATA: 24/06/2022'
+      '-- SOLICITADA POR: GUILHERME BARBUDO'
+      '-- CRIADA POR: GUILHERME BARBUDO'
+      '--SELECT D.*, '
+      '--FROM ('
+      'SELECT'
+      'D.BASE      BASE,'
+      'D.NOME      NOME,'
+      'D.SENHA     SENHA,'
+      'DECODE (D.STATUS_U, '#39'1'#39', '#39'ATIVO'#39', '#39'0'#39', '#39'INATIVO'#39') STATUS'
+      'FROM ('
+      '        --BASE CLC'
+      '        SELECT'
+      '          '#39'CLC'#39'          BASE,'
+      '          '#39'USUARIO'#39'      TABELA,'
+      '          U.USU_NOME     NOME,'
+      '          U.USU_SENHA    SENHA,'
+      '          U.VEN_CODIGO   COD_U,'
+      '          V.USU_CODIGO   COD_V,'
+      '          U.USU_ATIVO    STATUS_U,'
+      '          V.VEN_ATIVO    STATUS_V'
+      '        FROM ORACLC.USUARIO U'
+      '        LEFT JOIN ORACLC.VENDEDOR V'
+      '        ON (V.VEN_CODIGO = U.VEN_CODIGO)'
+      '        '
+      '        UNION ALL'
+      '        '
+      '        --BASE PTK'
+      '        SELECT'
+      '          '#39'PTK'#39'          BASE,'
+      '          '#39'USUARIO'#39'      TABELA,'
+      '          U.USU_NOME     NOME, '
+      '          U.USU_SENHA    SENHA,'
+      '          U.VEN_CODIGO   COD_U,'
+      '          V.USU_CODIGO   COD_V,'
+      '          U.USU_ATIVO    STATUS_U,'
+      '          V.VEN_ATIVO    STATUS_V'
+      '        FROM ORAPTK.USUARIO U'
+      '        LEFT JOIN ORAPTK.VENDEDOR V'
+      '        ON (V.VEN_CODIGO = U.VEN_CODIGO)'
+      '        '
+      '        UNION ALL'
+      ''
+      '        -- BASE LMK'
+      '        SELECT'
+      '          '#39'LMK'#39'          BASE,'
+      '          '#39'USUARIO'#39'      TABELA,'
+      '          U.USU_NOME     NOME, '
+      '          U.USU_SENHA    SENHA,'
+      '          U.VEN_CODIGO   COD_U,'
+      '          V.USU_CODIGO   COD_V,'
+      '            U.USU_ATIVO  STATUS_U,'
+      '          V.VEN_ATIVO    STATUS_V'
+      '        FROM ORALMK.USUARIO U'
+      '        LEFT JOIN ORALMK.VENDEDOR V'
+      '        ON (V.VEN_CODIGO = U.VEN_CODIGO)'
+      '        '
+      '        UNION ALL'
+      '        '
+      '        --BASE CSC'
+      '        SELECT'
+      '          '#39'CSC'#39'          BASE,'
+      '          '#39'USUARIO'#39'      TABELA,'
+      '          U.USU_NOME     NOME, '
+      '          U.USU_SENHA    SENHA,'
+      '          U.VEN_CODIGO   COD_U,'
+      '          V.USU_CODIGO   COD_V,'
+      '          U.USU_ATIVO    STATUS_U,'
+      '          V.VEN_ATIVO    STATUS_V'
+      '        FROM ORACSC.USUARIO U'
+      '        LEFT JOIN ORACSC.VENDEDOR V'
+      '        ON (V.VEN_CODIGO = U.VEN_CODIGO)'
+      '        '
+      '        UNION ALL'
+      '        '
+      '        --BASE PMI'
+      '        SELECT'
+      '          '#39'PMI'#39'          BASE,'
+      '          '#39'USUARIO'#39'      TABELA,'
+      '          U.USU_NOME     NOME, '
+      '          U.USU_SENHA    SENHA,'
+      '          U.VEN_CODIGO   COD_U,'
+      '          V.USU_CODIGO   COD_V,'
+      '          U.USU_ATIVO    STATUS_U,'
+      '          V.VEN_ATIVO    STATUS_V'
+      '        FROM ORAPMI.USUARIO U'
+      '        LEFT JOIN ORAPMI.VENDEDOR V'
+      '        ON (V.VEN_CODIGO = U.VEN_CODIGO)'
+      '       '
+      '        UNION ALL'
+      ''
+      '        -- BASE PMD'
+      '        SELECT'
+      '          '#39'PMD'#39'          BASE,'
+      '          '#39'USUARIO'#39'      TABELA,'
+      '          U.USU_NOME     NOME, '
+      '          U.USU_SENHA    SENHA,'
+      '          U.VEN_CODIGO   COD_U,'
+      '          V.USU_CODIGO   COD_V,'
+      '          U.USU_ATIVO    STATUS_U,'
+      '          V.VEN_ATIVO    STATUS_V'
+      '        FROM ORAPMD.USUARIO U'
+      '        LEFT JOIN ORAPMD.VENDEDOR V'
+      '        ON (V.VEN_CODIGO = U.VEN_CODIGO)'
+      '       '
+      '        UNION ALL'
+      '        '
+      '        --BASE STG'
+      '        SELECT'
+      '          '#39'STG'#39'          BASE,'
+      '          '#39'USUARIO'#39'      TABELA,'
+      '          U.USU_NOME     NOME, '
+      '          U.USU_SENHA    SENHA,'
+      '          U.VEN_CODIGO   COD_U,'
+      '          V.USU_CODIGO   COD_V,'
+      '          U.USU_ATIVO    STATUS_U,'
+      '          V.VEN_ATIVO    STATUS_V'
+      '        FROM ORASTG.USUARIO U'
+      '        LEFT JOIN ORASTG.VENDEDOR V'
+      '        ON (V.VEN_CODIGO = U.VEN_CODIGO)'
+      '       '
+      '        UNION ALL'
+      '        '
+      '        --BASE STR'
+      '        SELECT'
+      '          '#39'STR'#39'          BASE,'
+      '          '#39'USUARIO'#39'      TABELA,'
+      '          U.USU_NOME     NOME, '
+      '          U.USU_SENHA    SENHA,'
+      '          U.VEN_CODIGO   COD_U,'
+      '          V.USU_CODIGO   COD_V,'
+      '          U.USU_ATIVO    STATUS_U,'
+      '          V.VEN_ATIVO    STATUS_V'
+      '        FROM ORASTR.USUARIO U'
+      '        LEFT JOIN ORASTR.VENDEDOR V'
+      '        ON (V.VEN_CODIGO = U.VEN_CODIGO)'
+      '        '
+      '        UNION ALL'
+      '        '
+      '        --BASE LMF'
+      '        SELECT'
+      '          '#39'LMF'#39'          BASE,'
+      '          '#39'USUARIO'#39'      TABELA,'
+      '          U.USU_NOME     NOME, '
+      '          U.USU_SENHA    SENHA,'
+      '          U.VEN_CODIGO   COD_U,'
+      '          V.USU_CODIGO   COD_V,'
+      '          U.USU_ATIVO    STATUS_U,'
+      '          V.VEN_ATIVO    STATUS_V'
+      '        FROM ORALMF.USUARIO U'
+      '        LEFT JOIN ORALMF.VENDEDOR V'
+      '        ON (V.VEN_CODIGO = U.VEN_CODIGO)'
+      '       '
+      '        UNION ALL'
+      '        '
+      '         --BASE OLT'
+      '        SELECT'
+      '          '#39'OLT'#39'          BASE,'
+      '          '#39'USUARIO'#39'      TABELA,'
+      '          U.USU_NOME     NOME, '
+      '          U.USU_SENHA    SENHA,'
+      '          U.VEN_CODIGO   COD_U,'
+      '          V.USU_CODIGO   COD_V,'
+      '          U.USU_ATIVO    STATUS_U,'
+      '          V.VEN_ATIVO    STATUS_V'
+      '        FROM ORAOLT.USUARIO U'
+      '        LEFT JOIN ORAOLT.VENDEDOR V'
+      '        ON (V.VEN_CODIGO = U.VEN_CODIGO)'
+      ''
+      '        ) D'
+      'WHERE D.NOME = TRIM(UPPER(:NOME))')
+    Left = 104
+    Top = 152
+    ParamData = <
+      item
+        Name = 'NOME'
+        DataType = ftString
+        ParamType = ptInput
+        Value = Null
+      end>
+  end
+  object sqlChamados: TFDQuery
+    Active = True
+    Connection = Conexao
+    SQL.Strings = (
+      'SELECT'
+      '  D.COD,'
+      '  D.SITUACAO,'
+      '  D.SOLICITANTE,'
+      '  D.PROBLEMA,'
+      '  D.DATA,'
+      '  D.INTERACAO,'
+      '  D.DIAS,'
+      '  D.TECNICO,'
+      '  D.CHA_STATUS'
+      'FROM ('
+      '    SELECT'
+      '       CHA.CHA_CODIGO COD, '
+      
+        '       DECODE(CHA.CHA_SITUACAO,'#39'AB'#39','#39'ABERTO'#39','#39'AG'#39','#39'AGUARDANDO'#39','#39 +
+        'AN'#39','#39'EM ANDAMENTO'#39','#39'OK'#39','#39'FINALIZADO'#39','#39'SD'#39','#39'SOLIC. DESENV.'#39') SITU' +
+        'ACAO,'
+      '       USU.USU_NOME SOLICITANTE,'
+      '       CHA.CHA_PROBLEMA PROBLEMA,'
+      '       TO_DATE(CHA.CHA_INCLUIDATA, '#39'DD/MM/RRRR'#39') DATA,'
+      '       TO_DATE(CHA.CHA_ALTERADATA, '#39'DD/MM/RRRR'#39') INTERACAO,'
+      
+        '       TO_DATE(SYSDATE,'#39'DD/MM/RRRR'#39') - TO_DATE(CHA.CHA_INCLUIDAT' +
+        'A,'#39'DD/MM/RRRR'#39') DIAS,'
+      '       CHA.CHA_TECNICO TECNICO,'
+      '     CASE '
+      
+        '       WHEN  CHA.CHA_DEPARTAMENTO IN (2,3,4) AND CHA.CHA_TECNICO' +
+        ' IS NULL               AND CHA.CHA_SITUACAO = '#39'AB'#39' THEN 0 --ABER' +
+        'TO'
+      
+        '       WHEN (CHA.CHA_TECNICO =       UPPER(:NOME) OR CHA.CHA_ALT' +
+        'ERAPOR = UPPER(:NOME))               AND CHA.CHA_SITUACAO = '#39'AG'#39 +
+        ' THEN 1 --AGUARDANDO'
+      
+        '       WHEN (CHA.CHA_TECNICO =       UPPER(:NOME) OR CHA.CHA_ALT' +
+        'ERAPOR = UPPER(:NOME))               AND CHA.CHA_SITUACAO = '#39'AN'#39 +
+        ' THEN 2 --ANDAMENTO'
+      
+        '       WHEN (CHA.CHA_FINALIZADOPOR = UPPER(UPPER(:NOME)) AND CHA' +
+        '.CHA_TECNICO =  UPPER(:NOME))        AND CHA.CHA_SITUACAO = '#39'OK'#39 +
+        ' THEN 3 --FINALIZADO'
+      '     ELSE 500 END CHA_STATUS'
+      '    FROM CHAMADO CHA'
+      '    INNER JOIN USUARIO USU ON (USU.USU_CODIGO = CHA.USU_CODIGO)'
+      '   ORDER BY CHA.CHA_INCLUIDATA'
+      ') D'
+      'WHERE D.CHA_STATUS = :STATUS')
+    Left = 32
+    Top = 152
+    ParamData = <
+      item
+        Name = 'NOME'
+        DataType = ftString
+        ParamType = ptInput
+        Value = Null
+      end
+      item
+        Name = 'STATUS'
+        DataType = ftInteger
+        ParamType = ptInput
+        Value = Null
+      end>
+  end
+  object sqlEAcesso: TFDQuery
+    Connection = Conexao
+    Left = 168
+    Top = 152
+  end
+  object sqlLogEmail: TFDQuery
+    Connection = Conexao
+    SQL.Strings = (
+      'SELECT'
+      '  CLI.CLI_EMAILNFE,'
+      '  NFM.*'
+      'FROM NFE_EMAIL NFM'
+      
+        'INNER JOIN NF_UNICA NFU ON (NFU.NFU_CODIGO = NFM.NFU_CODIGO AND ' +
+        'TRIM(NFU.NFU_SERIE) = TRIM(NFM.NFU_SERIE))'
+      'INNER JOIN CLIENTE CLI ON (CLI.CLI_CODIGO = NFU.CLI_CODIGO)'
+      'WHERE NFM.NFU_CODIGO = :NUMERO_NF '
+      'AND TRIM(NFM.NFU_SERIE) = TRIM(:NF_SERIE)')
+    Left = 232
+    Top = 152
+    ParamData = <
+      item
+        Name = 'NUMERO_NF'
+        DataType = ftInteger
+        ParamType = ptInput
+        Value = Null
+      end
+      item
+        Name = 'NF_SERIE'
+        DataType = ftInteger
+        ParamType = ptInput
+        Value = Null
+      end>
+    object sqlLogEmailCLI_EMAILNFE: TStringField
+      FieldName = 'CLI_EMAILNFE'
+      Origin = 'CLI_EMAILNFE'
+      Size = 1000
+    end
+    object sqlLogEmailNFM_CODIGO: TBCDField
+      FieldName = 'NFM_CODIGO'
+      Origin = 'NFM_CODIGO'
+      Required = True
+      Precision = 15
+      Size = 0
+    end
+    object sqlLogEmailNFU_CODIGO: TBCDField
+      FieldName = 'NFU_CODIGO'
+      Origin = 'NFU_CODIGO'
+      Precision = 6
+      Size = 0
+    end
+    object sqlLogEmailNFU_SERIE: TStringField
+      FieldName = 'NFU_SERIE'
+      Origin = 'NFU_SERIE'
+      FixedChar = True
+      Size = 2
+    end
+    object sqlLogEmailNFM_ASSUNTO: TStringField
+      FieldName = 'NFM_ASSUNTO'
+      Origin = 'NFM_ASSUNTO'
+      Size = 500
+    end
+    object sqlLogEmailNFM_DESTINATARIO: TStringField
+      FieldName = 'NFM_DESTINATARIO'
+      Origin = 'NFM_DESTINATARIO'
+      Size = 500
+    end
+    object sqlLogEmailNFM_DEST_CC: TStringField
+      FieldName = 'NFM_DEST_CC'
+      Origin = 'NFM_DEST_CC'
+      Size = 500
+    end
+    object sqlLogEmailNFM_DEST_CCO: TStringField
+      FieldName = 'NFM_DEST_CCO'
+      Origin = 'NFM_DEST_CCO'
+      Size = 500
+    end
+    object sqlLogEmailNFM_OBSERVACAO: TStringField
+      FieldName = 'NFM_OBSERVACAO'
+      Origin = 'NFM_OBSERVACAO'
+      Size = 2000
+    end
+    object sqlLogEmailLOT_CODIGO: TBCDField
+      FieldName = 'LOT_CODIGO'
+      Origin = 'LOT_CODIGO'
+      Required = True
+      Precision = 15
+      Size = 0
+    end
+    object sqlLogEmailNFM_INCLUIDATA: TDateTimeField
+      FieldName = 'NFM_INCLUIDATA'
+      Origin = 'NFM_INCLUIDATA'
+      Required = True
+    end
+    object sqlLogEmailNFM_INCLUIPOR: TStringField
+      FieldName = 'NFM_INCLUIPOR'
+      Origin = 'NFM_INCLUIPOR'
+      Required = True
+      Size = 40
+    end
+    object sqlLogEmailNFM_AUTENTICACAO: TStringField
+      FieldName = 'NFM_AUTENTICACAO'
+      Origin = 'NFM_AUTENTICACAO'
+      Size = 200
+    end
+    object sqlLogEmailNFM_SERVER: TStringField
+      FieldName = 'NFM_SERVER'
+      Origin = 'NFM_SERVER'
+      Size = 40
+    end
+    object sqlLogEmailNFM_SITUACAO: TStringField
+      FieldName = 'NFM_SITUACAO'
+      Origin = 'NFM_SITUACAO'
+      Size = 2
+    end
+    object sqlLogEmailNFM_OWNER: TStringField
+      FieldName = 'NFM_OWNER'
+      Origin = 'NFM_OWNER'
+    end
+    object sqlLogEmailNFM_DATAENVIO: TDateTimeField
+      FieldName = 'NFM_DATAENVIO'
+      Origin = 'NFM_DATAENVIO'
+    end
+  end
+  object dsVBase: TDataSource
+    DataSet = sqlVBase
+    Left = 104
+    Top = 80
+  end
+  object dsEAcesso: TDataSource
+    DataSet = sqlEAcesso
+    Left = 168
+    Top = 80
+  end
+  object dsLogEmail: TDataSource
+    AutoEdit = False
+    DataSet = sqlLogEmail
+    Left = 232
+    Top = 80
+  end
+  object dsEBase: TDataSource
+    DataSet = sqlEBase
+    Left = 304
+    Top = 80
+  end
+  object sqlEBase: TFDQuery
+    Active = True
+    Connection = Conexao
+    SQL.Strings = (
+      'SELECT BASE, COUNT(A.BASE) QNT'
+      ''
+      
+        '    FROM (SELECT '#39'CLC'#39' BASE, USU.USU_NOME, USU.USU_CODIGO, USU_A' +
+        'TIVO, VEN.VEN_CODIGO'
+      '          FROM ORACLC.USUARIO USU'
+      '          LEFT JOIN ORACLC.VENDEDOR VEN'
+      '            ON (USU.VEN_CODIGO = VEN.VEN_CODIGO)'
+      '        '
+      '        UNION ALL'
+      '        '
+      
+        '        SELECT '#39'STR'#39' BASE, USU.USU_NOME, USU.USU_CODIGO, USU_ATI' +
+        'VO, VEN.VEN_CODIGO'
+      '          FROM ORASTR.USUARIO USU'
+      '          LEFT JOIN ORASTR.VENDEDOR VEN'
+      '            ON (USU.VEN_CODIGO = VEN.VEN_CODIGO)'
+      '        '
+      '        UNION ALL'
+      '        '
+      
+        '        SELECT '#39'CSC'#39' BASE, USU.USU_NOME, USU.USU_CODIGO, USU_ATI' +
+        'VO, VEN.VEN_CODIGO'
+      '          FROM ORACSC.USUARIO USU'
+      '          LEFT JOIN ORACSC.VENDEDOR VEN'
+      '            ON (USU.VEN_CODIGO = VEN.VEN_CODIGO)'
+      '        '
+      '        UNION ALL'
+      '        '
+      
+        '        SELECT '#39'OLT'#39' BASE, USU.USU_NOME, USU.USU_CODIGO, USU_ATI' +
+        'VO, VEN.VEN_CODIGO'
+      '          FROM ORAOLT.USUARIO USU'
+      '          LEFT JOIN ORAOLT.VENDEDOR VEN'
+      '            ON (USU.VEN_CODIGO = VEN.VEN_CODIGO)'
+      '        '
+      '        UNION ALL'
+      '        '
+      
+        '        SELECT '#39'LMF'#39' BASE, USU.USU_NOME, USU.USU_CODIGO, USU_ATI' +
+        'VO, VEN.VEN_CODIGO'
+      '          FROM ORALMF.USUARIO USU'
+      '          LEFT JOIN ORALMF.VENDEDOR VEN'
+      '            ON (USU.VEN_CODIGO = VEN.VEN_CODIGO)'
+      '        '
+      '        UNION ALL'
+      '        '
+      
+        '        SELECT '#39'PMD'#39' BASE, USU.USU_NOME, USU.USU_CODIGO, USU_ATI' +
+        'VO, VEN.VEN_CODIGO'
+      '          FROM ORAPMD.USUARIO USU'
+      '          LEFT JOIN ORAPMD.VENDEDOR VEN'
+      '            ON (USU.VEN_CODIGO = VEN.VEN_CODIGO)'
+      '        '
+      '        UNION ALL'
+      '        '
+      
+        '        SELECT '#39'STG'#39' BASE, USU.USU_NOME, USU.USU_CODIGO, USU_ATI' +
+        'VO, VEN.VEN_CODIGO'
+      '          FROM ORASTG.USUARIO USU'
+      '          LEFT JOIN ORASTG.VENDEDOR VEN'
+      '            ON (USU.VEN_CODIGO = VEN.VEN_CODIGO)'
+      '        '
+      '        UNION ALL'
+      '        '
+      
+        '        SELECT '#39'LMK'#39' BASE, USU.USU_NOME, USU.USU_CODIGO, USU_ATI' +
+        'VO, VEN.VEN_CODIGO'
+      '          FROM ORALMK.USUARIO USU'
+      '          LEFT JOIN ORALMK.VENDEDOR VEN'
+      '            ON (USU.VEN_CODIGO = VEN.VEN_CODIGO)'
+      '        '
+      '        UNION ALL'
+      '        '
+      
+        '        SELECT '#39'PTK'#39' BASE, USU.USU_NOME, USU.USU_CODIGO, USU_ATI' +
+        'VO, VEN.VEN_CODIGO        '
+      '          FROM ORAPTK.USUARIO USU'
+      '          LEFT JOIN ORAPTK.VENDEDOR VEN'
+      '            ON (USU.VEN_CODIGO = VEN.VEN_CODIGO)'
+      '        '
+      '        UNION ALL'
+      '        '
+      
+        '        SELECT '#39'PMI'#39' BASE, USU.USU_NOME, USU.USU_CODIGO, USU_ATI' +
+        'VO, VEN.VEN_CODIGO'
+      '          FROM ORAPMI.USUARIO USU'
+      '          LEFT JOIN ORAPMI.VENDEDOR VEN'
+      '            ON (USU.VEN_CODIGO = VEN.VEN_CODIGO))A'
+      'WHERE A.USU_NOME = UPPER(:NOME1)'
+      'OR   A.USU_NOME = UPPER(:NOME2)'
+      'GROUP BY A.BASE'
+      'HAVING COUNT(A.BASE) < 1')
+    Left = 304
+    Top = 152
+    ParamData = <
+      item
+        Name = 'NOME1'
+        DataType = ftString
+        ParamType = ptInput
+        Value = Null
+      end
+      item
+        Name = 'NOME2'
+        DataType = ftString
+        ParamType = ptInput
+        Value = Null
+      end>
+    object sqlEBaseBASE: TStringField
+      FieldName = 'BASE'
+      Origin = 'BASE'
+      FixedChar = True
+      Size = 3
+    end
+    object sqlEBaseQNT: TFMTBCDField
+      FieldName = 'QNT'
+      Origin = 'QNT'
+      Precision = 38
+      Size = 38
+    end
+  end
+end

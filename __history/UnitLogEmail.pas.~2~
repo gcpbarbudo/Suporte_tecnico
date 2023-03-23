@@ -1,0 +1,65 @@
+unit UnitLogEmail;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, Data.DB,
+  Vcl.Mask, Vcl.DBCtrls;
+
+type
+  TformLogEmail = class(TForm)
+    TDEdit: TPanel;
+    Nome: TLabel;
+    Label1: TLabel;
+    edtNFCod: TEdit;
+    bLocalizar: TButton;
+    edtNFSerie: TEdit;
+    Panel1: TPanel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label6: TLabel;
+    Label9: TLabel;
+    Label10: TLabel;
+    Label12: TLabel;
+    Label13: TLabel;
+    Label15: TLabel;
+    Label17: TLabel;
+    DBEdit1: TDBEdit;
+    DBEdit2: TDBEdit;
+    DBEdit4: TDBEdit;
+    DBEdit7: TDBEdit;
+    DBEdit8: TDBEdit;
+    DBEdit10: TDBEdit;
+    DBEdit11: TDBEdit;
+    DBEdit13: TDBEdit;
+    DBEdit15: TDBEdit;
+    DataSource1: TDataSource;
+    procedure bLocalizarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  formLogEmail: TformLogEmail;
+
+implementation
+
+{$R *.dfm}
+
+uses UnitDM;
+
+procedure TformLogEmail.bLocalizarClick(Sender: TObject);
+begin
+   with DM do
+   begin
+     if sqlLogEmail.Active then sqlLogEmail.Close;
+     DM.sqlLogEmail.ParamByName('NF_SERIE').AsInteger := StrToInt(edtNFCod.Text) ;
+     sqlLogEmail.ParamByName('NUMERO_NF').AsInteger := StrToInt (edtNFSerie.Text);
+     sqlLogEmail.Open();
+   end;
+end;
+
+end.

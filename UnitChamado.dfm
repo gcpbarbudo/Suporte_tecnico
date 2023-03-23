@@ -1,0 +1,147 @@
+object formChamado: TformChamado
+  Left = 0
+  Top = 0
+  BorderIcons = [biSystemMenu, biMinimize]
+  Caption = 'Coletek | Chamados'
+  ClientHeight = 434
+  ClientWidth = 1052
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poScreenCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 1052
+    Height = 81
+    Align = alTop
+    Color = 16744448
+    ParentBackground = False
+    TabOrder = 0
+    ExplicitLeft = 1
+    ExplicitTop = -5
+    object Nome: TLabel
+      Left = 16
+      Top = 56
+      Width = 32
+      Height = 14
+      Caption = 'Nome'
+      Color = clWhite
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = 14
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentColor = False
+      ParentFont = False
+    end
+    object rgStatus: TRadioGroup
+      Left = 632
+      Top = 41
+      Width = 401
+      Height = 35
+      Color = clWhite
+      Columns = 4
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ItemIndex = 0
+      Items.Strings = (
+        'Aberto'
+        'Aguardando'
+        'Andamento'
+        'Finalizado')
+      ParentBackground = False
+      ParentColor = False
+      ParentFont = False
+      TabOrder = 0
+      OnClick = bLocalizarClick
+    end
+    object edtNome: TEdit
+      Left = 54
+      Top = 54
+      Width = 259
+      Height = 21
+      TabOrder = 1
+      OnClick = edtNomeClick
+    end
+    object bLocalizar: TButton
+      Left = 336
+      Top = 52
+      Width = 75
+      Height = 25
+      Caption = 'Localizar'
+      TabOrder = 2
+      OnClick = bLocalizarClick
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Top = 81
+    Width = 1052
+    Height = 353
+    Align = alClient
+    Color = clWhite
+    ParentBackground = False
+    TabOrder = 1
+    object DBGrid1: TDBGrid
+      Left = 1
+      Top = 1
+      Width = 1050
+      Height = 351
+      Align = alClient
+      DataSource = DM.dsChamados
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = 15
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 0
+      TitleFont.Charset = DEFAULT_CHARSET
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -11
+      TitleFont.Name = 'Tahoma'
+      TitleFont.Style = []
+      OnColEnter = bLocalizarClick
+      Columns = <
+        item
+          Expanded = False
+          FieldName = 'COD'
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'SOLICITANTE'
+          Width = 187
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'PROBLEMA'
+          Width = 731
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'DIAS'
+          Width = 50
+          Visible = True
+        end>
+    end
+  end
+  object Timer1: TTimer
+    Interval = 60000
+    OnTimer = bLocalizarClick
+    Left = 1005
+    Top = 8
+  end
+end
